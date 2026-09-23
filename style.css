@@ -239,14 +239,14 @@ section {
 
 .game ul {
   list-style: none;
-  margin: 18px 0 0;
+  margin: 22px 0 0;
   padding: 0;
   display: grid;
-  gap: 10px;
+  gap: 16px;
 }
 
 .game li {
-  padding-left: 22px;
+  padding-left: 30px;
   position: relative;
   color: var(--ink-soft);
 }
@@ -264,22 +264,21 @@ section {
 }
 
 .game li.stat {
-  font-size: var(--fs-md);
+  font-size: calc(var(--fs-md) * 2);
   line-height: 1.35;
   color: var(--ink);
 }
 
 .game li.stat::before {
-  top: 0.45em;
-  width: 9px;
-  height: 9px;
+  top: 0.5em;
+  width: 0.3em;
+  height: 0.3em;
 }
 
 .stat-num {
-  font-family: "Nunito", "Segoe UI", sans-serif;
-  font-weight: 800;
+  font-family: "Lilita One", "Segoe UI", sans-serif;
+  font-weight: 400;
   color: var(--brabant-red);
-  letter-spacing: -0.01em;
 }
 
 .studio h2 {
@@ -745,4 +744,10 @@ nav a:hover {
   .contact-form button:hover {
     transform: none;
   }
+}
+
+.game p b.asterisk,
+.game .platform-note,
+.game .platform-note b {
+  color: var(--brabant-red);
 }
