@@ -293,7 +293,6 @@ section {
 }
 
 /* dark surfaces keep the original dark palette */
-.contact-card,
 .links a {
   --ink: #EDEAE4;
   --ink-soft: #A6A199;
@@ -390,9 +389,9 @@ section {
 }
 
 .contact-card {
-  background: var(--paper);
+  background: rgba(255, 255, 255, 0.55);
   border: 1px solid var(--rule);
-  border-left: 3px solid var(--brand);
+  border-left: 4px solid var(--brabant-red);
   border-radius: 4px;
   padding: 30px;
 }
@@ -426,8 +425,8 @@ section {
   width: 100%;
   padding: 10px 12px;
   border-radius: 3px;
-  border: 1px solid var(--rule);
-  background: var(--bg);
+  border: 1px solid rgba(42, 22, 10, 0.4);
+  background: #fffdf8;
   color: var(--ink);
   font-family: "Public Sans", sans-serif;
   font-size: 0.93rem;
@@ -443,8 +442,8 @@ section {
   padding: 10px 20px;
   border-radius: 3px;
   border: 1px solid transparent;
-  background: var(--brand);
-  color: var(--bg);
+  background: var(--brabant-red);
+  color: #fff;
   font-family: inherit;
   font-size: 0.95rem;
   font-weight: 500;
@@ -452,7 +451,7 @@ section {
 }
 
 .contact-form button:hover {
-  background: #f0794f;
+  background: #a80014;
 }
 
 .contact-form button[disabled] {
@@ -470,7 +469,7 @@ section {
 .field-error {
   display: block;
   font-size: 0.82rem;
-  color: #E2745A;
+  color: #b3001a;
   margin-top: 4px;
 }
 
@@ -630,4 +629,47 @@ footer.wrap {
 .hero-shot {
   display: block;
   cursor: zoom-in;
+}
+
+/* compact social icons in the header nav */
+.nav-socials {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 6px;
+  padding-left: 16px;
+  border-left: 1px solid var(--rule);
+}
+
+.nav-socials a {
+  display: inline-flex;
+  padding: 8px;
+  color: var(--ink);
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.nav-socials a:hover {
+  color: var(--brand);
+  transform: translateY(-2px);
+}
+
+.nav-socials .social-icon {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 520px) {
+  .nav-socials {
+    flex-basis: 100%;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    border-left: 0;
+  }
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--brabant-red);
+  outline-offset: 1px;
 }

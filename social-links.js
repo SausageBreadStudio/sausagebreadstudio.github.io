@@ -9,11 +9,23 @@
 
     render: function (container) {
       container.textContent = '';
+      var iconsOnly = container.dataset.socialLinks === 'icons';
       this.items.forEach(function (item) {
         var link = document.createElement('a');
         link.href = item.url;
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
+
+        if (iconsOnly) {
+          link.setAttribute('aria-label', item.label);
+          link.title = item.label;
+          var glyph = document.createElement('span');
+          glyph.className = 'social-icon social-icon-' + item.id;
+          glyph.setAttribute('aria-hidden', 'true');
+          link.appendChild(glyph);
+          container.appendChild(link);
+          return;
+        }
 
         var circle = document.createElement('span');
         circle.className = 'icon-circle icon-' + item.id;
