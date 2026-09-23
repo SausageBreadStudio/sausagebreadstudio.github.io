@@ -4,7 +4,7 @@
     {
       "name": "sbs-homepage",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "."],
+      "runtimeArgs": ["live-server", "--port=5500", "--no-browser"],
       "port": 5500,
       "autoPort": true
     }
