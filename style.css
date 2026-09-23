@@ -525,7 +525,7 @@ footer.wrap {
 
 .gallery ul {
   list-style: none;
-  margin: 22px 0 0;
+  margin: 0;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -626,6 +626,8 @@ footer.wrap {
   }
 }
 
-.gallery li.wide {
-  grid-column: 1 / -1;
+
+.hero-shot {
+  display: block;
+  cursor: zoom-in;
 }
