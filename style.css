@@ -1,20 +1,24 @@
 @font-face {
-  font-family: "Oswald";
+  font-family: "Lilita One";
   font-style: normal;
-  font-weight: 500 700;
+  font-weight: 400;
   font-display: swap;
-  src: url("fonts/oswald-latin.woff2") format("woff2");
+  src: url("fonts/lilita-one-latin.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "Public Sans";
+  font-family: "Nunito";
   font-style: normal;
-  font-weight: 400 800;
+  font-weight: 200 1000;
   font-display: swap;
-  src: url("fonts/public-sans-latin.woff2") format("woff2");
+  src: url("fonts/nunito-latin.woff2") format("woff2");
 }
 
 :root {
+  /* the only three type sizes on the site */
+  --fs-sm: 0.9rem;
+  --fs-md: 1.2rem;
+  --fs-lg: clamp(3rem, 10vw, 5.5rem);
   --bg: #0A0A0A;
   --paper: #171717;
   --ink: #EDEAE4;
@@ -45,8 +49,8 @@ body {
   --field: #3d5a2e;
   --rule: rgba(42, 22, 10, 0.3);
   color: var(--ink);
-  font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 17px;
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: var(--fs-md);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -54,8 +58,8 @@ body {
 h1,
 h2,
 .wordmark {
-  font-family: "Oswald", "Segoe UI", sans-serif;
-  font-weight: 700;
+  font-family: "Lilita One", "Segoe UI", sans-serif;
+  font-weight: 400;
   letter-spacing: -0.01em;
   margin: 0;
 }
@@ -97,8 +101,8 @@ header {
   text-align: center;
   white-space: nowrap;
   line-height: 1;
-  /* text is ~9.8em wide, so this spans the full header width */
-  font-size: min(calc((100vw - 72px) / 10), 128px); /* caps the title at about 1280px wide */
+  /* text is ~10.8em wide, so this spans the full header width */
+  font-size: min(calc((100vw - 72px) / 11), 116px); /* fills the header width, capped at about 1280px */
   text-transform: uppercase;
   text-decoration: none;
   /* Brabant flag: red/white checker, clipped to the text */
@@ -118,14 +122,14 @@ nav {
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px 16px;
-  font-size: 1.2rem;
+  font-size: var(--fs-md);
 }
 
 nav a {
   padding: 6px 14px;
   color: var(--ink);
-  font-family: "Oswald", "Segoe UI", sans-serif;
-  font-weight: 700;
+  font-family: "Lilita One", "Segoe UI", sans-serif;
+  font-weight: 400;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   text-decoration: none;
@@ -141,7 +145,7 @@ nav a:hover {
 }
 
 .game-title {
-  font-size: clamp(3.2rem, 11vw, 6.5rem);
+  font-size: var(--fs-lg);
   line-height: 0.95;
   margin: 0 0 14px;
 }
@@ -174,17 +178,17 @@ nav a:hover {
 .btn-steam>span {
   display: flex;
   flex-direction: column;
-  font-family: "Oswald", "Segoe UI", sans-serif;
-  font-weight: 600;
-  font-size: 1.55rem;
+  font-family: "Lilita One", "Segoe UI", sans-serif;
+  font-weight: 400;
+  font-size: var(--fs-md);
   letter-spacing: -0.01em;
   line-height: 1.3;
 }
 
 .btn-steam small {
-  font-family: "Public Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-weight: 400;
-  font-size: 0.8rem;
+  font-size: var(--fs-sm);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #8fa8bd;
@@ -192,7 +196,7 @@ nav a:hover {
 
 .platform-note {
   margin: 10px 0 0;
-  font-size: 0.85rem;
+  font-size: var(--fs-sm);
   color: var(--ink-soft);
 }
 
@@ -210,7 +214,7 @@ section {
 .game .tag {
   color: var(--field);
   font-weight: 500;
-  font-size: 0.92rem;
+  font-size: var(--fs-sm);
   margin: 6px 0 16px;
 }
 
@@ -260,7 +264,7 @@ section {
 }
 
 .game li.stat {
-  font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+  font-size: var(--fs-md);
   line-height: 1.35;
   color: var(--ink);
 }
@@ -272,14 +276,14 @@ section {
 }
 
 .stat-num {
-  font-family: "Oswald", "Segoe UI", sans-serif;
-  font-weight: 700;
+  font-family: "Nunito", "Segoe UI", sans-serif;
+  font-weight: 800;
   color: var(--brabant-red);
   letter-spacing: -0.01em;
 }
 
 .studio h2 {
-  font-size: 1.4rem;
+  font-size: var(--fs-md);
 }
 
 .studio p {
@@ -317,7 +321,7 @@ section {
   border: 1px solid var(--rule);
   border-radius: 999px;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: var(--fs-sm);
   font-weight: 500;
   color: var(--ink);
   background: var(--paper);
@@ -397,7 +401,7 @@ section {
 }
 
 .contact-card h2 {
-  font-size: 1.4rem;
+  font-size: var(--fs-md);
 }
 
 .contact-card>p {
@@ -415,7 +419,7 @@ section {
 
 .contact-form label {
   display: block;
-  font-size: 0.85rem;
+  font-size: var(--fs-sm);
   color: var(--ink-soft);
   margin-bottom: 6px;
 }
@@ -428,8 +432,8 @@ section {
   border: 1px solid rgba(42, 22, 10, 0.4);
   background: #fffdf8;
   color: var(--ink);
-  font-family: "Public Sans", sans-serif;
-  font-size: 0.93rem;
+  font-family: "Nunito", sans-serif;
+  font-size: var(--fs-sm);
   resize: vertical;
 }
 
@@ -445,7 +449,7 @@ section {
   background: var(--brabant-red);
   color: #fff;
   font-family: inherit;
-  font-size: 0.95rem;
+  font-size: var(--fs-sm);
   font-weight: 500;
   cursor: pointer;
 }
@@ -463,12 +467,12 @@ section {
   padding: 10px 12px;
   border-left: 2px solid var(--field);
   color: var(--ink);
-  font-size: 0.9rem;
+  font-size: var(--fs-sm);
 }
 
 .field-error {
   display: block;
-  font-size: 0.82rem;
+  font-size: var(--fs-sm);
   color: #b3001a;
   margin-top: 4px;
 }
@@ -484,7 +488,7 @@ footer.wrap {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
-  font-size: 0.85rem;
+  font-size: var(--fs-sm);
   color: var(--ink-soft);
 }
 
@@ -513,7 +517,7 @@ footer.wrap {
 
 /* screenshot gallery + lightbox */
 .gallery h2 {
-  font-size: 1.4rem;
+  font-size: var(--fs-md);
 }
 
 .gallery p {
@@ -597,7 +601,7 @@ footer.wrap {
   border-radius: 50%;
   width: 48px;
   height: 48px;
-  font-size: 1.8rem;
+  font-size: var(--fs-md);
   line-height: 1;
   cursor: pointer;
 }
@@ -672,4 +676,73 @@ footer.wrap {
 .contact-form textarea:focus {
   outline: 2px solid var(--brabant-red);
   outline-offset: 1px;
+}
+
+/* playful touches */
+h1,
+h2,
+.wordmark {
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+nav a {
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  border-radius: 999px;
+  transition: color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+}
+
+nav a:hover {
+  background: rgba(212, 0, 26, 0.1);
+  color: var(--brabant-red);
+  transform: rotate(-3deg) scale(1.05);
+}
+
+.game img,
+.gallery a,
+.contact-card {
+  border-radius: 18px;
+}
+
+.game li.stat {
+  font-weight: 600;
+}
+
+.gallery li {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.gallery li:nth-child(odd):hover {
+  transform: rotate(-1.5deg) scale(1.02);
+}
+
+.gallery li:nth-child(even):hover {
+  transform: rotate(1.5deg) scale(1.02);
+}
+
+.contact-form input,
+.contact-form textarea {
+  border-radius: 10px;
+}
+
+.contact-form button {
+  border-radius: 999px;
+  padding: 10px 26px;
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.15s ease;
+}
+
+.contact-form button:hover {
+  transform: scale(1.06) rotate(-1deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  nav a:hover,
+  .gallery li:hover,
+  .contact-form button:hover {
+    transform: none;
+  }
 }
