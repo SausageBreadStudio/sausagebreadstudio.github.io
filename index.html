@@ -167,22 +167,48 @@
 
   .follow h2{ font-size: 1.4rem; }
   .follow p{ color: var(--ink-soft); max-width: 48ch; margin: 10px 0 22px; }
-  .links{ display: flex; flex-wrap: wrap; gap: 10px; }
+  .links{ display: flex; flex-wrap: wrap; gap: 12px; }
   .links a{
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
   }
   .links svg{ flex: none; }
   .links a{
-    padding: 9px 16px;
+    padding: 8px 18px 8px 8px;
     border: 1px solid var(--rule);
-    border-radius: 3px;
+    border-radius: 999px;
     text-decoration: none;
-    font-size: 0.93rem;
+    font-size: 0.95rem;
+    font-weight: 500;
     color: var(--ink);
+    background: var(--paper);
+    transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
   }
-  .links a:hover{ border-color: var(--ink-soft); }
+  .links a:hover{
+    border-color: var(--icon-color);
+    background: #1d1d1d;
+    transform: translateY(-2px);
+  }
+  .icon-circle{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    color: #fff;
+  }
+  .icon-circle svg{ width: 16px; height: 16px; }
+  .icon-instagram{
+    --icon-color: #dd2a7b;
+    background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  }
+  .icon-youtube{ --icon-color: #ff0000; background: #ff0000; }
+  .icon-reddit{ --icon-color: #ff4500; background: #ff4500; }
+  .icon-tiktok{ --icon-color: #25f4ee; background: #000; }
+  .icon-github{ --icon-color: #c9c9c9; background: #f2f2f2; color: var(--bg); }
 
   .contact{ padding-top: 8px; }
   .contact-card{
@@ -313,21 +339,26 @@
     <p>DriveZand is in active development, which is a fancy way of saying I fix one bug and create two new ones. Devlogs and updates land here first, mistakes fully included.</p>
     <div class="links">
       <a href="https://instagram.com/sausagebreadstudio/">
+        <span class="icon-circle icon-instagram">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <rect x="3" y="3" width="18" height="18" rx="5"/>
           <circle cx="12" cy="12" r="4.2"/>
           <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/>
         </svg>
+        </span>
         Instagram
       </a>
       <a href="https://www.youtube.com/@SausageBreadStudio/">
+        <span class="icon-circle icon-youtube">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/>
           <path d="M10.3 9.1v5.8l5.1-2.9-5.1-2.9Z" fill="currentColor" stroke="none"/>
         </svg>
+        </span>
         YouTube
       </a>
       <a href="https://www.reddit.com/user/SausageBreadStudio/">
+        <span class="icon-circle icon-reddit">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <circle cx="12" cy="13.2" r="7.3"/>
           <path d="M12 5.9V3.4"/>
@@ -336,16 +367,20 @@
           <circle cx="15" cy="13" r="1" fill="currentColor" stroke="none"/>
           <path d="M8.8 16.2c1 .9 5.4.9 6.4 0"/>
         </svg>
+        </span>
         Reddit
       </a>
       <a href="https://www.tiktok.com/@SausageBreadStudio/">
+        <span class="icon-circle icon-tiktok">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M13.5 3.5v11.2a3.6 3.6 0 1 1-3-3.55"/>
           <path d="M13.5 3.5c.5 2.6 2.3 4.4 4.9 4.7"/>
         </svg>
+        </span>
         TikTok
       </a>
       <a href="https://github.com/SausageBreadStudio">
+        <span class="icon-circle icon-github">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <circle cx="12" cy="13" r="7.2"/>
           <path d="M7.3 7.6 5.6 4.9"/>
@@ -353,6 +388,7 @@
           <circle cx="9.3" cy="13.4" r="0.9" fill="currentColor" stroke="none"/>
           <circle cx="14.7" cy="13.4" r="0.9" fill="currentColor" stroke="none"/>
         </svg>
+        </span>
         GitHub
       </a>
     </div>
