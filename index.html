@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sausage Bread Studio Homepage</title>
+<meta name="description" content="Sausage Bread Studio is a one-person game studio making DriveZand, a delivery-driving game across 2,500km² of Brabant countryside.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%23E2653A%22/><path d=%22M8 20c0-5 3-9 8-9s8 4 8 9%22 fill=%22none%22 stroke=%22%230A0A0A%22 stroke-width=%222.5%22 stroke-linecap=%22round%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0A0A0A;
+    --paper: #171717;
+    --ink: #EDEAE4;
+    --ink-soft: #A6A199;
+    --crust: #E2A63D;
+    --brand: #E2653A;
+    --field: #8FAE82;
+    --rule: rgba(237,234,228,0.16);
+    --max: 780px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, .wordmark{
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  a{ color: inherit; }
+  a:focus-visible, button:focus-visible, input:focus-visible{
+    outline: 2px solid var(--brand);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .wrap{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  header{ padding: 28px 0 0; }
+  .header-row{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .wordmark{ font-size: 1.1rem; }
+  nav{
+    display: flex;
+    gap: 20px;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+  }
+  nav a{ text-decoration: none; }
+  nav a:hover{ color: var(--ink); }
+
+  .hero{ padding: 60px 0 44px; }
+  .hero h1{
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    line-height: 1.1;
+    max-width: 18ch;
+  }
+  .hero p.lede{
+    margin: 18px 0 0;
+    max-width: 42ch;
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+  }
+  .hero-actions{
+    margin-top: 26px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .btn{
+    display: inline-block;
+    padding: 11px 20px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border: 1px solid transparent;
+  }
+  .btn-primary{ background: var(--brand); color: var(--bg); }
+  .btn-primary:hover{ background: #f0794f; }
+  .btn-ghost{ border-color: var(--rule); color: var(--ink); }
+  .btn-ghost:hover{ border-color: var(--ink-soft); }
+
+  .road-rule{
+    border: none;
+    border-top: 3px dashed var(--rule);
+    margin: 0;
+  }
+
+  section{ padding: 44px 0; }
+
+  .about p{ color: var(--ink-soft); max-width: 56ch; }
+
+  .game h2{ font-size: 1.6rem; }
+  .game .tag{
+    color: var(--field);
+    font-weight: 500;
+    font-size: 0.92rem;
+    margin: 6px 0 16px;
+  }
+  .game p{ color: var(--ink-soft); max-width: 56ch; }
+  .game ul{
+    list-style: none;
+    margin: 18px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+  }
+  .game li{
+    padding-left: 18px;
+    position: relative;
+  }
+  .game li::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 7px;
+    height: 7px;
+    background: var(--crust);
+    border-radius: 1px;
+    transform: rotate(45deg);
+  }
+
+  .follow h2{ font-size: 1.4rem; }
+  .follow p{ color: var(--ink-soft); max-width: 48ch; margin: 10px 0 22px; }
+  .links{ display: flex; flex-wrap: wrap; gap: 10px; }
+  .links a{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .links svg{ flex: none; }
+  .links a{
+    padding: 9px 16px;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 0.93rem;
+    color: var(--ink);
+  }
+  .links a:hover{ border-color: var(--ink-soft); }
+
+  .contact{ padding-top: 8px; }
+  .contact-card{
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--brand);
+    border-radius: 4px;
+    padding: 30px;
+  }
+  .contact-card h2{ font-size: 1.4rem; }
+  .contact-card > p{ color: var(--ink-soft); max-width: 46ch; margin: 10px 0 24px; }
+
+  .contact-form{
+    margin-top: 26px;
+    max-width: 420px;
+    display: grid;
+    gap: 14px;
+  }
+  .contact-form label{
+    display: block;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+  }
+  .contact-form input,
+  .contact-form textarea{
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 3px;
+    border: 1px solid var(--rule);
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Public Sans", sans-serif;
+    font-size: 0.93rem;
+    resize: vertical;
+  }
+  .contact-form textarea{ min-height: 100px; }
+  .contact-form button{
+    justify-self: start;
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    background: var(--brand);
+    color: var(--bg);
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .contact-form button:hover{ background: #f0794f; }
+  .contact-form button[disabled]{ opacity: 0.6; cursor: default; }
+  .form-status-success:not(:empty){
+    padding: 10px 12px;
+    border-left: 2px solid var(--field);
+    color: var(--ink);
+    font-size: 0.9rem;
+  }
+  .field-error{
+    display: block;
+    font-size: 0.82rem;
+    color: #E2745A;
+    margin-top: 4px;
+  }
+  .field-error:empty{ display: none; }
+
+  footer{
+    border-top: 1px solid var(--rule);
+    padding: 24px 0 36px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-row">
+    <div class="wordmark">Sausage Bread Studio</div>
+    <nav>
+      <a href="#drivezand">DriveZand</a>
+      <a href="#about">About</a>
+      <a href="#follow">Follow</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <h1>One desk. One studio. One very large map.</h1>
+    <p class="lede">Sausage Bread Studio is a solo game studio making DriveZand, a delivery-driving game set across the Brabant countryside.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#follow">Follow DriveZand</a>
+      <a class="btn btn-ghost" href="#drivezand">See the game</a>
+    </div>
+  </section>
+
+  <hr class="road-rule">
+
+  <section class="game" id="drivezand">
+    <h2>DriveZand</h2>
+    <p class="tag">A delivery-driving life-sim</p>
+    <p>Drive a post van across 2,500km² of open Brabant countryside — about the size of Luxembourg — delivering packages while keeping yourself fed, watered, and rested.</p>
+    <ul>
+      <li>One continuous world the size of a small country, no loading screens</li>
+      <li>A post van you can fully customize, from engine to paint job</li>
+      <li>Your own needs — food, drink, sleep — run alongside the job</li>
+      <li>PC, with mouse or gamepad support</li>
+    </ul>
+  </section>
+
+  <hr class="road-rule">
+
+  <section class="about" id="about">
+    <h2>About</h2>
+    <p>Sausage Bread Studio is one person, based in the Netherlands, building DriveZand start to finish. The name is a nod to the Brabant sausage roll: unpretentious, regional, better than it has any right to be.</p>
+  </section>
+
+  <hr class="road-rule">
+
+  <section class="follow" id="follow">
+    <h2>Follow the studio</h2>
+    <p>DriveZand is in active development. Devlogs and updates land here first.</p>
+    <div class="links">
+      <a href="https://instagram.com/sausagebreadstudio/">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="5"/>
+          <circle cx="12" cy="12" r="4.2"/>
+          <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/>
+        </svg>
+        Instagram
+      </a>
+      <a href="https://www.youtube.com/@SausageBreadStudio/">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/>
+          <path d="M10.3 9.1v5.8l5.1-2.9-5.1-2.9Z" fill="currentColor" stroke="none"/>
+        </svg>
+        YouTube
+      </a>
+      <a href="https://www.reddit.com/user/SausageBreadStudio/">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="13.2" r="7.3"/>
+          <path d="M12 5.9V3.4"/>
+          <circle cx="12" cy="3.4" r="1" fill="currentColor" stroke="none"/>
+          <circle cx="9" cy="13" r="1" fill="currentColor" stroke="none"/>
+          <circle cx="15" cy="13" r="1" fill="currentColor" stroke="none"/>
+          <path d="M8.8 16.2c1 .9 5.4.9 6.4 0"/>
+        </svg>
+        Reddit
+      </a>
+      <a href="https://www.tiktok.com/@SausageBreadStudio/">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M13.5 3.5v11.2a3.6 3.6 0 1 1-3-3.55"/>
+          <path d="M13.5 3.5c.5 2.6 2.3 4.4 4.9 4.7"/>
+        </svg>
+        TikTok
+      </a>
+      <a href="https://github.com/SausageBreadStudio">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="13" r="7.2"/>
+          <path d="M7.3 7.6 5.6 4.9"/>
+          <path d="M16.7 7.6l1.7-2.7"/>
+          <circle cx="9.3" cy="13.4" r="0.9" fill="currentColor" stroke="none"/>
+          <circle cx="14.7" cy="13.4" r="0.9" fill="currentColor" stroke="none"/>
+        </svg>
+        GitHub
+      </a>
+    </div>
+  </section>
+
+  <hr class="road-rule">
+
+  <section class="contact" id="contact">
+    <div class="contact-card">
+      <h2>Get in touch</h2>
+      <p>Questions, press, or just want to say hi — send a message directly.</p>
+      <form class="contact-form" id="contact-form">
+        <div data-fs-success class="form-status form-status-success"></div>
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" autocomplete="name" data-fs-field>
+        </div>
+        <div>
+          <label for="email">Your email</label>
+          <input type="email" id="email" name="email" required autocomplete="email" data-fs-field>
+          <span class="field-error" data-fs-error="email"></span>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required data-fs-field></textarea>
+          <span class="field-error" data-fs-error="message"></span>
+        </div>
+        <span class="field-error" data-fs-error></span>
+        <button type="submit" data-fs-submit-btn>Send</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'mdekzejr' });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@formspree/ajax@1" defer></script>
+
+<footer class="wrap">
+  <span>© 2026 Sausage Bread Studio</span>
+  <span>Made in Noord-Brabant</span>
+</footer>
+
+
+</body>
+</html>
