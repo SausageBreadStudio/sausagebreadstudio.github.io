@@ -264,7 +264,7 @@ section {
 }
 
 .game li.stat {
-  font-size: calc(var(--fs-md) * 2);
+  font-size: calc(var(--fs-md) * 2 - 8px);
   line-height: 1.35;
   color: var(--ink);
 }
@@ -750,4 +750,38 @@ nav a:hover {
 .game .platform-note,
 .game .platform-note b {
   color: var(--brabant-red);
+}
+
+/* intro paragraph: bullet-list size minus 8px */
+.game p:not(.tag):not(.platform-note) {
+  font-size: calc(var(--fs-md) * 2 - 8px);
+  line-height: 1.35;
+  max-width: none;
+}
+
+.game .road-rule {
+  margin: 28px 0;
+}
+
+.game .hero-shot img {
+  margin-top: 0;
+}
+
+/* footnote marker: a bullet shaped like an asterisk */
+.game .platform-note {
+  font-size: calc(var(--fs-sm) + 2px);
+  position: relative;
+  padding-left: 26px;
+}
+
+.game .platform-note::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.3em;
+  width: calc(var(--fs-sm) - 2px);
+  height: calc(var(--fs-sm) - 2px);
+  background: var(--brabant-red);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-10 -10 20 20'%3E%3Cg stroke='black' stroke-width='3.6' stroke-linecap='round'%3E%3Cpath d='M0-8V8M-6.9-4L6.9 4M-6.9 4L6.9-4'/%3E%3C/g%3E%3C/svg%3E") no-repeat center / contain;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-10 -10 20 20'%3E%3Cg stroke='black' stroke-width='3.6' stroke-linecap='round'%3E%3Cpath d='M0-8V8M-6.9-4L6.9 4M-6.9 4L6.9-4'/%3E%3C/g%3E%3C/svg%3E") no-repeat center / contain;
 }
