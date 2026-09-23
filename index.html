@@ -115,7 +115,7 @@
 
   section{ padding: 44px 0; }
 
-  .about p{ color: var(--ink-soft); max-width: 56ch; }
+  .about p, .one-guy p{ color: var(--ink-soft); max-width: 56ch; }
 
   .game h2{ font-size: 1.6rem; }
   .game .tag{
@@ -125,6 +125,13 @@
     margin: 6px 0 16px;
   }
   .game p{ color: var(--ink-soft); max-width: 56ch; }
+  .game img{
+    width: 100%;
+    display: block;
+    margin-top: 22px;
+    border-radius: 6px;
+    border: 1px solid var(--rule);
+  }
   .game ul{
     list-style: none;
     margin: 18px 0 0;
@@ -293,8 +300,9 @@
     <div class="wordmark">Sausage Bread Studio</div>
     <nav>
       <a href="#drivezand">DriveZand</a>
-      <a href="#about">About</a>
       <a href="#follow">Follow</a>
+      <a href="#one-guy">One Guy</a>
+      <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -304,7 +312,7 @@
 
   <section class="hero">
     <h1>One guy. One desk. Way too much map.</h1>
-    <p class="lede">Sausage Bread Studio is one stubborn Brabander building DriveZand, a delivery-driving game roughly the size of a small country, mostly held together by coffee and spite.</p>
+    <p class="lede">Sausage Bread Studio is building DriveZand, a delivery-driving game across 2,500km² of Brabant countryside.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="#follow">Follow DriveZand</a>
       <a class="btn btn-ghost" href="#drivezand">See the game</a>
@@ -317,19 +325,13 @@
     <h2>DriveZand</h2>
     <p class="tag">A delivery-driving life-sim nobody asked for, but here we are</p>
     <p>Drive a post van across 2,500km² of open Brabant countryside, about the size of Luxembourg, if Luxembourg had more mud and worse weather, delivering packages while trying not to starve, dehydrate, or fall asleep at the wheel. Same as a real job, basically.</p>
+    <img src="images/drivezand-screenshot.webp" alt="A DriveZand screenshot of a sunset over the open Brabant countryside, with a lookout tower silhouetted against the sky" loading="lazy">
     <ul>
       <li class="stat"><span class="stat-num">2,500 km²</span> of open Brabant countryside, about the size of Luxembourg, one continuous world with no loading screens</li>
       <li class="stat"><span class="stat-num">Fully customizable</span> post van, from engine to paint job. Yes, you can put a spoiler on it. No, it will not make it faster</li>
       <li class="stat"><span class="stat-num">Life-sim needs</span>: food, drink, and sleep run alongside the job, just like a real delivery driver, minus the union</li>
       <li>PC, with mouse or gamepad support</li>
     </ul>
-  </section>
-
-  <hr class="road-rule">
-
-  <section class="about" id="about">
-    <h2>About</h2>
-    <p>It's just me, one guy in Brabant with a laptop, too many ideas, and a mild inability to leave this alone. No publisher, no team, no investors asking about "synergy," just someone who thought "what if the post van game was really, really big." The name's a nod to the local worstenbroodje: nothing fancy, nothing international, but somehow exactly what you wanted.</p>
   </section>
 
   <hr class="road-rule">
@@ -392,6 +394,20 @@
         GitHub
       </a>
     </div>
+  </section>
+
+  <hr class="road-rule">
+
+  <section class="one-guy" id="one-guy">
+    <h2>One Guy</h2>
+    <p>It's just me, one guy in Brabant with a laptop, too many ideas, and a mild inability to leave this alone. No publisher, no team, no investors asking about "synergy," just someone who thought "what if the post van game was really, really big." Coffee's doing most of the heavy lifting.</p>
+  </section>
+
+  <hr class="road-rule">
+
+  <section class="about" id="about">
+    <h2>About</h2>
+    <p>Sausage Bread Studio is based in Noord-Brabant, building DriveZand start to finish. The name's a nod to the local worstenbroodje: nothing fancy, nothing international, but somehow exactly what you wanted.</p>
   </section>
 
   <hr class="road-rule">
