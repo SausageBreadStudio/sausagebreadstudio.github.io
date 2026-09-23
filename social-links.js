@@ -4,8 +4,7 @@
       { id: 'instagram', label: 'Instagram', url: 'https://instagram.com/sausagebreadstudio/' },
       { id: 'youtube', label: 'YouTube', url: 'https://www.youtube.com/@SausageBreadStudio/' },
       { id: 'reddit', label: 'Reddit', url: 'https://www.reddit.com/user/SausageBreadStudio/' },
-      { id: 'tiktok', label: 'TikTok', url: 'https://www.tiktok.com/@SausageBreadStudio/' },
-      { id: 'github', label: 'GitHub', url: 'https://github.com/SausageBreadStudio' }
+      { id: 'tiktok', label: 'TikTok', url: 'https://www.tiktok.com/@SausageBreadStudio/' }
     ],
 
     render: function (container) {

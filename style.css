@@ -76,24 +76,39 @@ header {
 }
 
 .header-row {
+  max-width: none;
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px 24px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
   padding-bottom: 20px;
   border-bottom: 1px solid var(--rule);
 }
 
 .wordmark {
-  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  display: block;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1;
+  /* text is ~9.8em wide, so this spans the full header width */
+  font-size: calc((100vw - 72px) / 10);
   text-transform: uppercase;
   text-decoration: none;
+  /* Brabant flag: red/white checker, clipped to the text */
+  --checker: 0.14em;
+  color: transparent;
+  background:
+    conic-gradient(#d4001a 25%, #fff 0 50%, #d4001a 0 75%, #fff 0) 0 0 / calc(var(--checker) * 2) calc(var(--checker) * 2);
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 nav {
   display: flex;
-  gap: 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 32px;
   font-size: 0.95rem;
   color: var(--ink-soft);
 }
@@ -104,15 +119,6 @@ nav a {
 
 nav a:hover {
   color: var(--ink);
-}
-
-nav .lang-switch {
-  border: 1px solid var(--rule);
-  border-radius: 3px;
-  padding: 0 8px;
-  font-size: 0.8rem;
-  letter-spacing: 0.06em;
-  align-self: center;
 }
 
 .hero-game {
@@ -185,10 +191,6 @@ section {
   padding: 44px 0;
 }
 
-.about p {
-  color: var(--ink-soft);
-  max-width: 56ch;
-}
 
 .game .tag {
   color: var(--field);
@@ -256,14 +258,18 @@ section {
   letter-spacing: -0.01em;
 }
 
-.follow h2 {
+.studio h2 {
   font-size: 1.4rem;
 }
 
-.follow p {
+.studio p {
   color: var(--ink-soft);
-  max-width: 48ch;
-  margin: 10px 0 22px;
+  max-width: 56ch;
+  margin: 10px 0 0;
+}
+
+.studio .links {
+  margin-top: 22px;
 }
 
 .links {
@@ -332,11 +338,6 @@ section {
   -webkit-mask: url("https://cdn.jsdelivr.net/npm/simple-icons@16.32.0/icons/tiktok.svg") no-repeat center / contain;
 }
 
-.social-icon-github {
-  mask: url("https://cdn.jsdelivr.net/npm/simple-icons@16.32.0/icons/github.svg") no-repeat center / contain;
-  -webkit-mask: url("https://cdn.jsdelivr.net/npm/simple-icons@16.32.0/icons/github.svg") no-repeat center / contain;
-}
-
 .icon-instagram {
   --icon-color: #dd2a7b;
   background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
@@ -355,12 +356,6 @@ section {
 .icon-tiktok {
   --icon-color: #25f4ee;
   background: #000;
-}
-
-.icon-github {
-  --icon-color: #c9c9c9;
-  background: #f2f2f2;
-  color: var(--bg);
 }
 
 .contact-card {
