@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%23E2653A%22/><path d=%22M8 20c0-5 3-9 8-9s8 4 8 9%22 fill=%22none%22 stroke=%22%230A0A0A%22 stroke-width=%222.5%22 stroke-linecap=%22round%22/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg: #0A0A0A;
@@ -36,8 +36,8 @@
   }
 
   h1, h2, .wordmark{
-    font-family: "Fraunces", Georgia, serif;
-    font-weight: 600;
+    font-family: "Oswald", "Segoe UI", sans-serif;
+    font-weight: 700;
     letter-spacing: -0.01em;
     margin: 0;
   }
@@ -65,7 +65,7 @@
     padding-bottom: 20px;
     border-bottom: 1px solid var(--rule);
   }
-  .wordmark{ font-size: 1.1rem; }
+  .wordmark{ font-size: clamp(1.5rem, 4vw, 2.1rem); text-transform: uppercase; }
   nav{
     display: flex;
     gap: 20px;
@@ -133,8 +133,9 @@
     gap: 10px;
   }
   .game li{
-    padding-left: 18px;
+    padding-left: 22px;
     position: relative;
+    color: var(--ink-soft);
   }
   .game li::before{
     content: "";
@@ -146,6 +147,22 @@
     background: var(--crust);
     border-radius: 1px;
     transform: rotate(45deg);
+  }
+  .game li.stat{
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    line-height: 1.35;
+    color: var(--ink);
+  }
+  .game li.stat::before{
+    top: 0.45em;
+    width: 9px;
+    height: 9px;
+  }
+  .stat-num{
+    font-family: "Oswald", "Segoe UI", sans-serif;
+    font-weight: 700;
+    color: var(--crust);
+    letter-spacing: -0.01em;
   }
 
   .follow h2{ font-size: 1.4rem; }
@@ -275,9 +292,9 @@
     <p class="tag">A delivery-driving life-sim</p>
     <p>Drive a post van across 2,500km² of open Brabant countryside — about the size of Luxembourg — delivering packages while keeping yourself fed, watered, and rested.</p>
     <ul>
-      <li>One continuous world the size of a small country, no loading screens</li>
-      <li>A post van you can fully customize, from engine to paint job</li>
-      <li>Your own needs — food, drink, sleep — run alongside the job</li>
+      <li class="stat"><span class="stat-num">2,500 km²</span> of open Brabant countryside — one continuous world, no loading screens</li>
+      <li class="stat"><span class="stat-num">Fully customizable</span> post van, from engine to paint job</li>
+      <li class="stat"><span class="stat-num">Life-sim needs</span> — food, drink, and sleep run alongside the job</li>
       <li>PC, with mouse or gamepad support</li>
     </ul>
   </section>
