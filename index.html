@@ -1,475 +1,602 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sausage Bread Studio Homepage</title>
-<meta name="description" content="Sausage Bread Studio is a one-person game studio making DriveZand, a delivery-driving game across 2,500km² of Brabant countryside.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%23E2653A%22/><path d=%22M8 20c0-5 3-9 8-9s8 4 8 9%22 fill=%22none%22 stroke=%22%230A0A0A%22 stroke-width=%222.5%22 stroke-linecap=%22round%22/></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg: #0A0A0A;
-    --paper: #171717;
-    --ink: #EDEAE4;
-    --ink-soft: #A6A199;
-    --crust: #E2A63D;
-    --brand: #E2653A;
-    --field: #8FAE82;
-    --rule: rgba(237,234,228,0.16);
-    --max: 780px;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sausage Bread Studio Homepage</title>
+  <meta name="description"
+    content="Sausage Bread Studio is a one-person game studio making DriveZand, a delivery-driving game across 2,500km² of Brabant countryside.">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%23E2653A%22/><path d=%22M8 20c0-5 3-9 8-9s8 4 8 9%22 fill=%22none%22 stroke=%22%230A0A0A%22 stroke-width=%222.5%22 stroke-linecap=%22round%22/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0A0A0A;
+      --paper: #171717;
+      --ink: #EDEAE4;
+      --ink-soft: #A6A199;
+      --crust: #E2A63D;
+      --brand: #E2653A;
+      --field: #8FAE82;
+      --rule: rgba(237, 234, 228, 0.16);
+      --max: 780px;
+    }
 
-  *{ box-sizing: border-box; }
-  html{ scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
 
-  body{
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    font-size: 17px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  h1, h2, .wordmark{
-    font-family: "Oswald", "Segoe UI", sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    margin: 0;
-  }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  a{ color: inherit; }
-  a:focus-visible, button:focus-visible, input:focus-visible{
-    outline: 2px solid var(--brand);
-    outline-offset: 3px;
-    border-radius: 2px;
-  }
+    h1,
+    h2,
+    .wordmark {
+      font-family: "Oswald", "Segoe UI", sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin: 0;
+    }
 
-  .wrap{
-    max-width: var(--max);
-    margin: 0 auto;
-    padding: 0 28px;
-  }
+    a {
+      color: inherit;
+    }
 
-  header{ padding: 28px 0 0; }
-  .header-row{
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--rule);
-  }
-  .wordmark{ font-size: clamp(1.5rem, 4vw, 2.1rem); text-transform: uppercase; }
-  nav{
-    display: flex;
-    gap: 20px;
-    font-size: 0.95rem;
-    color: var(--ink-soft);
-  }
-  nav a{ text-decoration: none; }
-  nav a:hover{ color: var(--ink); }
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+      outline: 2px solid var(--brand);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
 
-  .hero-game{ padding: 60px 0 44px; }
-  .game-title{
-    font-size: clamp(3.2rem, 11vw, 6.5rem);
-    line-height: 0.95;
-    margin: 0 0 14px;
-  }
-  .hero-actions{
-    margin-top: 26px;
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-  }
-  .btn{
-    display: inline-block;
-    padding: 11px 20px;
-    border-radius: 3px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    border: 1px solid transparent;
-  }
-  .btn-primary{ background: var(--brand); color: var(--bg); }
-  .btn-primary:hover{ background: #f0794f; }
-  .btn-ghost{ border-color: var(--rule); color: var(--ink); }
-  .btn-ghost:hover{ border-color: var(--ink-soft); }
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
 
-  .btn-steam{
-    margin-top: 22px;
-    display: inline-flex;
-    align-items: center;
-    gap: 18px;
-    padding: 22px 38px;
-    border-radius: 5px;
-    background: #1b2838;
-    border: 1px solid #2a475e;
-    color: #66c0f4;
-    opacity: 0.55;
-    cursor: not-allowed;
-    pointer-events: none;
-    user-select: none;
-  }
-  .steam-icon{
-    width: 30px;
-    height: 30px;
-    flex: none;
-    background-color: #66c0f4;
-    -webkit-mask: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/steam.svg') no-repeat center / contain;
-    mask: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/steam.svg') no-repeat center / contain;
-  }
-  .btn-steam > span{
-    display: flex;
-    flex-direction: column;
-    font-family: "Oswald", "Segoe UI", sans-serif;
-    font-weight: 600;
-    font-size: 1.55rem;
-    letter-spacing: -0.01em;
-    line-height: 1.3;
-  }
-  .btn-steam small{
-    font-family: "Public Sans", sans-serif;
-    font-weight: 400;
-    font-size: 0.8rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #8fa8bd;
-  }
-  .platform-note{
-    margin: 10px 0 0;
-    font-size: 0.85rem;
-    color: var(--ink-soft);
-  }
+    header {
+      padding: 28px 0 0;
+    }
 
-  .road-rule{
-    border: none;
-    border-top: 3px dashed var(--rule);
-    margin: 0;
-  }
+    .header-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--rule);
+    }
 
-  section{ padding: 44px 0; }
+    .wordmark {
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      text-transform: uppercase;
+    }
 
-  .one-guy p{ color: var(--ink-soft); max-width: 56ch; }
+    nav {
+      display: flex;
+      gap: 20px;
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+    }
 
-  .game .tag{
-    color: var(--field);
-    font-weight: 500;
-    font-size: 0.92rem;
-    margin: 6px 0 16px;
-  }
-  .game p{ color: var(--ink-soft); max-width: 56ch; }
-  .game img{
-    width: 100%;
-    display: block;
-    margin-top: 22px;
-    border-radius: 6px;
-    border: 1px solid var(--rule);
-  }
-  .game ul{
-    list-style: none;
-    margin: 18px 0 0;
-    padding: 0;
-    display: grid;
-    gap: 10px;
-  }
-  .game li{
-    padding-left: 22px;
-    position: relative;
-    color: var(--ink-soft);
-  }
-  .game li::before{
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.55em;
-    width: 7px;
-    height: 7px;
-    background: var(--crust);
-    border-radius: 1px;
-    transform: rotate(45deg);
-  }
-  .game li.stat{
-    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
-    line-height: 1.35;
-    color: var(--ink);
-  }
-  .game li.stat::before{
-    top: 0.45em;
-    width: 9px;
-    height: 9px;
-  }
-  .stat-num{
-    font-family: "Oswald", "Segoe UI", sans-serif;
-    font-weight: 700;
-    color: var(--crust);
-    letter-spacing: -0.01em;
-  }
+    nav a {
+      text-decoration: none;
+    }
 
-  .follow h2{ font-size: 1.4rem; }
-  .follow p{ color: var(--ink-soft); max-width: 48ch; margin: 10px 0 22px; }
-  .links{ display: flex; flex-wrap: wrap; gap: 12px; }
-  .links a{
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .links svg{ flex: none; }
-  .links a{
-    padding: 8px 18px 8px 8px;
-    border: 1px solid var(--rule);
-    border-radius: 999px;
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--ink);
-    background: var(--paper);
-    transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
-  }
-  .links a:hover{
-    border-color: var(--icon-color);
-    background: #1d1d1d;
-    transform: translateY(-2px);
-  }
-  .icon-circle{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: none;
-    color: #fff;
-  }
-  .social-icon{
-    width: 16px;
-    height: 16px;
-    display: block;
-    background-color: currentColor;
-  }
-  .social-icon-instagram{ mask: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/instagram.svg') no-repeat center / contain; -webkit-mask: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/instagram.svg') no-repeat center / contain; }
-  .social-icon-youtube{ mask: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/youtube.svg') no-repeat center / contain; -webkit-mask: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/youtube.svg') no-repeat center / contain; }
-  .social-icon-reddit{ mask: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/reddit.svg') no-repeat center / contain; -webkit-mask: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/reddit.svg') no-repeat center / contain; }
-  .social-icon-tiktok{ mask: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/tiktok.svg') no-repeat center / contain; -webkit-mask: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/tiktok.svg') no-repeat center / contain; }
-  .social-icon-github{ mask: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg') no-repeat center / contain; -webkit-mask: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg') no-repeat center / contain; }
-  .icon-instagram{
-    --icon-color: #dd2a7b;
-    background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
-  }
-  .icon-youtube{ --icon-color: #ff0000; background: #ff0000; }
-  .icon-reddit{ --icon-color: #ff4500; background: #ff4500; }
-  .icon-tiktok{ --icon-color: #25f4ee; background: #000; }
-  .icon-github{ --icon-color: #c9c9c9; background: #f2f2f2; color: var(--bg); }
+    nav a:hover {
+      color: var(--ink);
+    }
 
-  .contact{ padding-top: 8px; }
-  .contact-card{
-    background: var(--paper);
-    border: 1px solid var(--rule);
-    border-left: 3px solid var(--brand);
-    border-radius: 4px;
-    padding: 30px;
-  }
-  .contact-card h2{ font-size: 1.4rem; }
-  .contact-card > p{ color: var(--ink-soft); max-width: 46ch; margin: 10px 0 24px; }
+    .hero-game {
+      padding: 60px 0 44px;
+    }
 
-  .contact-form{
-    margin-top: 26px;
-    max-width: 420px;
-    display: grid;
-    gap: 14px;
-  }
-  .contact-form label{
-    display: block;
-    font-size: 0.85rem;
-    color: var(--ink-soft);
-    margin-bottom: 6px;
-  }
-  .contact-form input,
-  .contact-form textarea{
-    width: 100%;
-    padding: 10px 12px;
-    border-radius: 3px;
-    border: 1px solid var(--rule);
-    background: var(--bg);
-    color: var(--ink);
-    font-family: "Public Sans", sans-serif;
-    font-size: 0.93rem;
-    resize: vertical;
-  }
-  .contact-form textarea{ min-height: 100px; }
-  .contact-form button{
-    justify-self: start;
-    padding: 10px 20px;
-    border-radius: 3px;
-    border: 1px solid transparent;
-    background: var(--brand);
-    color: var(--bg);
-    font-family: inherit;
-    font-size: 0.95rem;
-    font-weight: 500;
-    cursor: pointer;
-  }
-  .contact-form button:hover{ background: #f0794f; }
-  .contact-form button[disabled]{ opacity: 0.6; cursor: default; }
-  .form-status-success:not(:empty){
-    padding: 10px 12px;
-    border-left: 2px solid var(--field);
-    color: var(--ink);
-    font-size: 0.9rem;
-  }
-  .field-error{
-    display: block;
-    font-size: 0.82rem;
-    color: #E2745A;
-    margin-top: 4px;
-  }
-  .field-error:empty{ display: none; }
+    .game-title {
+      font-size: clamp(3.2rem, 11vw, 6.5rem);
+      line-height: 0.95;
+      margin: 0 0 14px;
+    }
 
-  footer{
-    border-top: 1px solid var(--rule);
-    padding: 24px 0 36px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
-    font-size: 0.85rem;
-    color: var(--ink-soft);
-  }
-</style>
+    .btn-steam {
+      margin-top: 22px;
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      padding: 22px 38px;
+      border-radius: 5px;
+      background: #1b2838;
+      border: 1px solid #2a475e;
+      color: #66c0f4;
+      opacity: 0.55;
+      cursor: not-allowed;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .steam-icon {
+      width: 30px;
+      height: 30px;
+      flex: none;
+      background-color: #66c0f4;
+      -webkit-mask: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/steam.svg') no-repeat center / contain;
+      mask: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/steam.svg') no-repeat center / contain;
+    }
+
+    .btn-steam>span {
+      display: flex;
+      flex-direction: column;
+      font-family: "Oswald", "Segoe UI", sans-serif;
+      font-weight: 600;
+      font-size: 1.55rem;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+
+    .btn-steam small {
+      font-family: "Public Sans", sans-serif;
+      font-weight: 400;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #8fa8bd;
+    }
+
+    .platform-note {
+      margin: 10px 0 0;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+    }
+
+    .road-rule {
+      border: none;
+      border-top: 3px dashed var(--rule);
+      margin: 0;
+    }
+
+    section {
+      padding: 44px 0;
+    }
+
+    .about p {
+      color: var(--ink-soft);
+      max-width: 56ch;
+    }
+
+    .game .tag {
+      color: var(--field);
+      font-weight: 500;
+      font-size: 0.92rem;
+      margin: 6px 0 16px;
+    }
+
+    .game p {
+      color: var(--ink-soft);
+      max-width: 56ch;
+    }
+
+    .game img {
+      width: 100%;
+      display: block;
+      margin-top: 22px;
+      border-radius: 6px;
+      border: 1px solid var(--rule);
+    }
+
+    .game ul {
+      list-style: none;
+      margin: 18px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .game li {
+      padding-left: 22px;
+      position: relative;
+      color: var(--ink-soft);
+    }
+
+    .game li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 7px;
+      height: 7px;
+      background: var(--crust);
+      border-radius: 1px;
+      transform: rotate(45deg);
+    }
+
+    .game li.stat {
+      font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+      line-height: 1.35;
+      color: var(--ink);
+    }
+
+    .game li.stat::before {
+      top: 0.45em;
+      width: 9px;
+      height: 9px;
+    }
+
+    .stat-num {
+      font-family: "Oswald", "Segoe UI", sans-serif;
+      font-weight: 700;
+      color: var(--crust);
+      letter-spacing: -0.01em;
+    }
+
+    .follow h2 {
+      font-size: 1.4rem;
+    }
+
+    .follow p {
+      color: var(--ink-soft);
+      max-width: 48ch;
+      margin: 10px 0 22px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .links svg {
+      flex: none;
+    }
+
+    .links a {
+      padding: 8px 18px 8px 8px;
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--ink);
+      background: var(--paper);
+      transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .links a:hover {
+      border-color: var(--icon-color);
+      background: #1d1d1d;
+      transform: translateY(-2px);
+    }
+
+    .icon-circle {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+      color: #fff;
+    }
+
+    .social-icon {
+      width: 16px;
+      height: 16px;
+      display: block;
+      background-color: currentColor;
+    }
+
+    .social-icon-instagram {
+      mask: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/instagram.svg') no-repeat center / contain;
+      -webkit-mask: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/instagram.svg') no-repeat center / contain;
+    }
+
+    .social-icon-youtube {
+      mask: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/youtube.svg') no-repeat center / contain;
+      -webkit-mask: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/youtube.svg') no-repeat center / contain;
+    }
+
+    .social-icon-reddit {
+      mask: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/reddit.svg') no-repeat center / contain;
+      -webkit-mask: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/reddit.svg') no-repeat center / contain;
+    }
+
+    .social-icon-tiktok {
+      mask: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/tiktok.svg') no-repeat center / contain;
+      -webkit-mask: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/tiktok.svg') no-repeat center / contain;
+    }
+
+    .social-icon-github {
+      mask: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg') no-repeat center / contain;
+      -webkit-mask: url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg') no-repeat center / contain;
+    }
+
+    .icon-instagram {
+      --icon-color: #dd2a7b;
+      background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+    }
+
+    .icon-youtube {
+      --icon-color: #ff0000;
+      background: #ff0000;
+    }
+
+    .icon-reddit {
+      --icon-color: #ff4500;
+      background: #ff4500;
+    }
+
+    .icon-tiktok {
+      --icon-color: #25f4ee;
+      background: #000;
+    }
+
+    .icon-github {
+      --icon-color: #c9c9c9;
+      background: #f2f2f2;
+      color: var(--bg);
+    }
+
+    .contact-card {
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--brand);
+      border-radius: 4px;
+      padding: 30px;
+    }
+
+    .contact-card h2 {
+      font-size: 1.4rem;
+    }
+
+    .contact-card>p {
+      color: var(--ink-soft);
+      max-width: 46ch;
+      margin: 10px 0 24px;
+    }
+
+    .contact-form {
+      margin-top: 26px;
+      max-width: 420px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-form label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      margin-bottom: 6px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 3px;
+      border: 1px solid var(--rule);
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Public Sans", sans-serif;
+      font-size: 0.93rem;
+      resize: vertical;
+    }
+
+    .contact-form textarea {
+      min-height: 100px;
+    }
+
+    .contact-form button {
+      justify-self: start;
+      padding: 10px 20px;
+      border-radius: 3px;
+      border: 1px solid transparent;
+      background: var(--brand);
+      color: var(--bg);
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background: #f0794f;
+    }
+
+    .contact-form button[disabled] {
+      opacity: 0.6;
+      cursor: default;
+    }
+
+    .form-status-success:not(:empty) {
+      padding: 10px 12px;
+      border-left: 2px solid var(--field);
+      color: var(--ink);
+      font-size: 0.9rem;
+    }
+
+    .field-error {
+      display: block;
+      font-size: 0.82rem;
+      color: #E2745A;
+      margin-top: 4px;
+    }
+
+    .field-error:empty {
+      display: none;
+    }
+
+    footer.wrap {
+      border-top: 1px solid var(--rule);
+      padding: 24px 28px 60px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-  <div class="wrap header-row">
-    <div class="wordmark">Sausage Bread Studio</div>
-    <nav>
-      <a href="#drivezand">DriveZand</a>
-      <a href="#follow">Follow</a>
-      <a href="#one-guy">One Guy</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main class="wrap">
-
-  <section class="game hero-game" id="drivezand">
-    <h1 class="game-title">DriveZand</h1>
-    <p class="tag">A delivery-driving life-sim nobody asked for, but here we are</p>
-    <p>Drive a post van across 2,500km² of open Brabant countryside, about the size of Luxembourg, if Luxembourg had more mud and worse weather, delivering packages while trying not to starve, dehydrate, or fall asleep at the wheel. Same as a real job, basically.</p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="#follow">Follow DriveZand</a>
-      <a class="btn btn-ghost" href="#one-guy">Who made this?</a>
+  <header>
+    <div class="wrap header-row">
+      <div class="wordmark">Sausage Bread Studio</div>
+      <nav>
+        <a href="#drivezand">DriveZand</a>
+        <a href="#follow">Follow</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-    <span class="btn-steam" role="link" aria-disabled="true" tabindex="-1">
-      <span class="steam-icon" aria-hidden="true"></span>
-      <span>
-        Wishlist on Steam
-        <small>Coming soon</small>
+  </header>
+
+  <main class="wrap">
+
+    <section class="game hero-game" id="drivezand">
+      <h1 class="game-title">DriveZand</h1>
+      <p class="tag">A delivery-driving life-sim set in the South</p>
+      <p>Drive a Post Van across 2,500km² of open Brabant countryside, about the size of Luxembourg, if Luxembourg had
+        more mud and worse weather, delivering packages while trying not to starve, dehydrate, or fall asleep at the
+        wheel. Same as a real job, basically.</p>
+      <span class="btn-steam" role="link" aria-disabled="true" tabindex="-1">
+        <span class="steam-icon" aria-hidden="true"></span>
+        <span>
+          Wishlist on Steam
+          <small>Coming soon</small>
+        </span>
       </span>
-    </span>
-    <p class="platform-note">Releasing on Steam for Windows PC.</p>
-    <img src="images/drivezand-screenshot.webp" alt="A DriveZand screenshot of a sunset over the open Brabant countryside, with a lookout tower silhouetted against the sky" loading="lazy">
-    <ul>
-      <li class="stat"><span class="stat-num">2,500 km²</span> of open Brabant countryside, about the size of Luxembourg, one continuous world with no loading screens</li>
-      <li class="stat"><span class="stat-num">Fully customizable</span> post van, from engine to paint job. Yes, you can put a spoiler on it. No, it will not make it faster</li>
-      <li class="stat"><span class="stat-num">Life-sim needs</span>: food, drink, and sleep run alongside the job, just like a real delivery driver, minus the union</li>
-      <li>Steam release for Windows PC, with mouse or gamepad support</li>
-    </ul>
-  </section>
+      <p class="platform-note">Releasing on Steam for Windows PC.</p>
+      <img src="images/drivezand-screenshot.webp"
+        alt="A DriveZand screenshot of a sunset over the open Brabant countryside, with a lookout tower silhouetted against the sky"
+        loading="lazy">
+      <ul>
+        <li class="stat"><span class="stat-num">2,500 km²</span> of open Brabant countryside, about the size of
+          Luxembourg, one continuous world with no loading screens</li>
+        <li class="stat"><span class="stat-num">Fully customizable car</span>, from engine to paint job. Yes, you
+          can put a spoiler on it. No, it will not make it faster</li>
+        <li class="stat"><span class="stat-num">Life-sim needs</span>: food, hydration, and sleep run alongside the job,
+          just like a real delivery driver, minus the union</li>
+      </ul>
+    </section>
 
-  <hr class="road-rule">
+    <hr class="road-rule">
 
-  <section class="follow" id="follow">
-    <h2>Follow the studio</h2>
-    <p>DriveZand is in active development, which is a fancy way of saying I fix one bug and create two new ones. Devlogs and updates land here first, mistakes fully included.</p>
-    <div class="links">
-      <a href="https://instagram.com/sausagebreadstudio/" target="_blank" rel="noopener noreferrer">
-        <span class="icon-circle icon-instagram">
-          <span class="social-icon social-icon-instagram" aria-hidden="true"></span>
-        </span>
-        Instagram
-      </a>
-      <a href="https://www.youtube.com/@SausageBreadStudio/" target="_blank" rel="noopener noreferrer">
-        <span class="icon-circle icon-youtube">
-          <span class="social-icon social-icon-youtube" aria-hidden="true"></span>
-        </span>
-        YouTube
-      </a>
-      <a href="https://www.reddit.com/user/SausageBreadStudio/" target="_blank" rel="noopener noreferrer">
-        <span class="icon-circle icon-reddit">
-          <span class="social-icon social-icon-reddit" aria-hidden="true"></span>
-        </span>
-        Reddit
-      </a>
-      <a href="https://www.tiktok.com/@SausageBreadStudio/" target="_blank" rel="noopener noreferrer">
-        <span class="icon-circle icon-tiktok">
-          <span class="social-icon social-icon-tiktok" aria-hidden="true"></span>
-        </span>
-        TikTok
-      </a>
-      <a href="https://github.com/SausageBreadStudio" target="_blank" rel="noopener noreferrer">
-        <span class="icon-circle icon-github">
-          <span class="social-icon social-icon-github" aria-hidden="true"></span>
-        </span>
-        GitHub
-      </a>
-    </div>
-  </section>
+    <section class="follow" id="follow">
+      <h2>Follow the studio</h2>
+      <p>DriveZand is in active development, which is a fancy way of saying I fix one bug and create two new ones.
+        Devlogs and updates land here first, mistakes fully included.</p>
+      <div class="links">
+        <a href="https://instagram.com/sausagebreadstudio/" target="_blank" rel="noopener noreferrer">
+          <span class="icon-circle icon-instagram">
+            <span class="social-icon social-icon-instagram" aria-hidden="true"></span>
+          </span>
+          Instagram
+        </a>
+        <a href="https://www.youtube.com/@SausageBreadStudio/" target="_blank" rel="noopener noreferrer">
+          <span class="icon-circle icon-youtube">
+            <span class="social-icon social-icon-youtube" aria-hidden="true"></span>
+          </span>
+          YouTube
+        </a>
+        <a href="https://www.reddit.com/user/SausageBreadStudio/" target="_blank" rel="noopener noreferrer">
+          <span class="icon-circle icon-reddit">
+            <span class="social-icon social-icon-reddit" aria-hidden="true"></span>
+          </span>
+          Reddit
+        </a>
+        <a href="https://www.tiktok.com/@SausageBreadStudio/" target="_blank" rel="noopener noreferrer">
+          <span class="icon-circle icon-tiktok">
+            <span class="social-icon social-icon-tiktok" aria-hidden="true"></span>
+          </span>
+          TikTok
+        </a>
+        <a href="https://github.com/SausageBreadStudio" target="_blank" rel="noopener noreferrer">
+          <span class="icon-circle icon-github">
+            <span class="social-icon social-icon-github" aria-hidden="true"></span>
+          </span>
+          GitHub
+        </a>
+      </div>
+    </section>
 
-  <hr class="road-rule">
+    <hr class="road-rule">
 
-  <section class="one-guy" id="one-guy">
-    <h2>One Guy</h2>
-    <p>It's just me, one guy in Brabant with a laptop, too many ideas, and a mild inability to leave this alone. No publisher, no team, no investors asking about "synergy," just someone who thought "what if the post van game was really, really big." Coffee's doing most of the heavy lifting. Based in Noord-Brabant, building DriveZand start to finish, the name's a nod to the local worstenbroodje: nothing fancy, nothing international, but somehow exactly what you wanted.</p>
-  </section>
+    <section class="about" id="about">
+      <h2>One Guy</h2>
+      <p>It's just one guy in Noord-Brabant with too many ideas, and a mild inability to leave this alone. No
+        publisher, no team, no investors asking about "synergy," just someone who thought "what if the Post Van game was
+        really, really big." Coffee's doing most of the heavy lifting. Based in Noord-Brabant, building DriveZand start
+        to finish, the name's a nod to the local worstenbroodje: nothing fancy, nothing international, but somehow
+        exactly what you wanted.</p>
+    </section>
 
-  <hr class="road-rule">
+    <hr class="road-rule">
 
-  <section class="contact" id="contact">
-    <div class="contact-card">
-      <h2>Get in touch</h2>
-      <p>Questions, press, feedback, or you just want to tell me the game looks broken. Go ahead, I can take it.</p>
-      <form class="contact-form" id="contact-form">
-        <div data-fs-success class="form-status form-status-success"></div>
-        <div>
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" autocomplete="name" data-fs-field>
-        </div>
-        <div>
-          <label for="email">Your email</label>
-          <input type="email" id="email" name="email" required autocomplete="email" data-fs-field>
-          <span class="field-error" data-fs-error="email"></span>
-        </div>
-        <div>
-          <label for="message">Message</label>
-          <textarea id="message" name="message" required data-fs-field></textarea>
-          <span class="field-error" data-fs-error="message"></span>
-        </div>
-        <span class="field-error" data-fs-error></span>
-        <button type="submit" data-fs-submit-btn>Send</button>
-      </form>
-    </div>
-  </section>
+    <section class="contact" id="contact">
+      <div class="contact-card">
+        <h2>Get in touch</h2>
+        <p>Questions, press, feedback, or you just want to tell me the game looks broken. Go ahead, I can take it.</p>
+        <form class="contact-form" id="contact-form">
+          <div data-fs-success class="form-status form-status-success"></div>
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" data-fs-field>
+          </div>
+          <div>
+            <label for="email">Your email</label>
+            <input type="email" id="email" name="email" required autocomplete="email" data-fs-field>
+            <span class="field-error" data-fs-error="email"></span>
+          </div>
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required data-fs-field></textarea>
+            <span class="field-error" data-fs-error="message"></span>
+          </div>
+          <span class="field-error" data-fs-error></span>
+          <button type="submit" data-fs-submit-btn>Send</button>
+        </form>
+      </div>
+    </section>
 
-</main>
+  </main>
 
-<script>
-  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-  formspree('initForm', { formElement: '#contact-form', formId: 'mdekzejr' });
-</script>
-<script src="https://cdn.jsdelivr.net/npm/@formspree/ajax@1" defer></script>
+  <script>
+    window.formspree = window.formspree || function () {(formspree.q = formspree.q || []).push(arguments);};
+    formspree('initForm', {formElement: '#contact-form', formId: 'mdekzejr'});
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@formspree/ajax@1" defer></script>
 
-<footer class="wrap">
-  <span>© 2026 Sausage Bread Studio</span>
-  <span>Made in Noord-Brabant</span>
-</footer>
+  <footer class="wrap">
+    <span>© 2026 Sausage Bread Studio</span>
+    <span>Made in Noord-Brabant</span>
+  </footer>
 
 
 </body>
+
 </html>
