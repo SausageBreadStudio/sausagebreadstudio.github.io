@@ -40,7 +40,7 @@ html {
 
 body {
   margin: 0;
-  background: #fff6e4;
+  background: #ffffff;
   /* dark text on the light background; dark surfaces below restore the dark palette */
   --ink: #2a160a;
   --ink-soft: #4a2c14;
