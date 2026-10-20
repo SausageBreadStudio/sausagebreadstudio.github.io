@@ -148,7 +148,10 @@ nav a:hover {
   font-size: var(--fs-lg);
   line-height: 0.95;
   margin: 0 0 14px;
-  color: var(--crust);
+  color: #FBB100;
+  -webkit-text-stroke: 10px #000;
+  paint-order: stroke fill;
+  stroke-linejoin: round;
 }
 
 .game-subtitle {
@@ -157,7 +160,8 @@ nav a:hover {
   font-size: var(--fs-md);
   line-height: 1.2;
   letter-spacing: 0.14em;
-  color: var(--ink);
+  color: #000;
+  -webkit-text-stroke: 0;
 }
 
 .sr-only {
